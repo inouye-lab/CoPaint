@@ -6,7 +6,7 @@ from collections import defaultdict
 from .gaussian_diffusion import _extract_into_tensor
 from .respace import SpacedDiffusion
 from .scheduler import get_schedule_jump
-from utils import normalize_image, save_image, save_grid
+from ..utils import normalize_image, save_image, save_grid
 
 
 class DDNMSampler(SpacedDiffusion):

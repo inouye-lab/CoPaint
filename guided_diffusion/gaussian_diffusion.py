@@ -14,7 +14,7 @@ import torch as th
 
 from collections import defaultdict
 
-from guided_diffusion.scheduler import get_schedule_jump
+from .scheduler import get_schedule_jump
 
 
 def get_named_beta_schedule(schedule_name, num_diffusion_timesteps, use_scale):
@@ -480,7 +480,7 @@ class GaussianDiffusion:
                         sample_dir = kwargs.get("sample_dir", None)
                         if sample_dir is not None:
                             import os
-                            from utils import save_grid, normalize_image
+                            from ..utils import save_grid, normalize_image
 
                             os.makedirs(
                                 os.path.join(sample_dir, "middles"), exist_ok=True

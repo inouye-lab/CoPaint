@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.utils.checkpoint import checkpoint as grad_ckpt
 from tqdm import tqdm
 
-from utils.logger import logging_info
+from ..utils.logger import logging_info
 from .gaussian_diffusion import _extract_into_tensor
 from .new_scheduler import ddim_timesteps, ddim_repaint_timesteps
 from .respace import SpacedDiffusion
@@ -185,7 +185,7 @@ class DDIMSampler(SpacedDiffusion):
 
         x_t = img
         import os
-        from utils import normalize_image, save_grid
+        from ..utils import normalize_image, save_grid
 
         for cur_t, prev_t in tqdm(time_pairs):
             # replace surrounding
@@ -205,7 +205,7 @@ class DDIMSampler(SpacedDiffusion):
             x_t = output["x_prev"]
 
             if conf["debug"]:
-                from utils import normalize_image, save_grid
+                from ..utils import normalize_image, save_grid
 
                 os.makedirs(os.path.join(sample_dir, "middles"), exist_ok=True)
                 save_grid(
@@ -368,7 +368,7 @@ class R_DDIMSampler(DDIMSampler):
                 pred_x0=x_pred_x0,
             )
             if conf["debug"]:
-                from utils import normalize_image, save_grid
+                from ..utils import normalize_image, save_grid
 
                 os.makedirs(os.path.join(sample_dir, "middles"), exist_ok=True)
                 save_grid(
@@ -756,7 +756,7 @@ class O_DDIMSampler(DDIMSampler):
                 coef_xt_reg *= self.coef_xt_reg_decay
 
                 if conf["debug"]:
-                    from utils import normalize_image, save_grid
+                    from ..utils import normalize_image, save_grid
 
                     os.makedirs(os.path.join(
                         sample_dir, "middles"), exist_ok=True)

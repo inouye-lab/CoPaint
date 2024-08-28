@@ -11,7 +11,7 @@ from .scheduler import get_schedule_jump
 from .respace import SpacedDiffusion
 from .gaussian_diffusion import _extract_into_tensor
 import torch.nn as nn
-from utils import normalize_image, save_grid, save_image
+from ..utils import normalize_image, save_grid, save_image
 
 
 class DPSSampler(SpacedDiffusion):

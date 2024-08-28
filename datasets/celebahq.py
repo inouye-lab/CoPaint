@@ -4,8 +4,8 @@ from PIL import Image
 import numpy as np
 import torch
 
-from datasets.masks import generate_half_mask, mask_generators
-from datasets.utils import normalize, _list_image_files_recursively
+from .masks import generate_half_mask, mask_generators
+from .utils import normalize, _list_image_files_recursively
 
 
 def load_celebahq(

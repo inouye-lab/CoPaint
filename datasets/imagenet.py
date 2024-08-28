@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-from datasets.masks import mask_generators
-from datasets.utils import _list_image_files_recursively
+from .masks import mask_generators
+from .utils import _list_image_files_recursively
 
 
 # copied from Repaint code

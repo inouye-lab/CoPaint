@@ -5,7 +5,7 @@ import numpy as np
 from .scheduler import get_schedule_jump
 from .respace import SpacedDiffusion
 from .gaussian_diffusion import _extract_into_tensor
-from utils import normalize_image, save_grid, save_image
+from ..utils import normalize_image, save_grid, save_image
 
 
 class DDRMSampler(SpacedDiffusion):
